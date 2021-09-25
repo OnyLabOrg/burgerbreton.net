@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Breton</title>
+	<meta name="description" content="Livraison de burgers & crêpes artisanaux">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="icon" href="https://burgerbreton.net/cdn/image/favicon/96x96/simple/blue/burger-breton.png" type="image/x-icon" />
+
+    <script>
+        window.onload = function () {
+            if (typeof location.hash === 'string') {
+                var hide = [];
+                if (location.hash.toLowerCase().indexOf('sartrouville') >= 0) {
+                    hide.push('orgeval');
+                    hide.push('taverny');
+                } else if (location.hash.toLowerCase().indexOf('orgeval') >= 0) {
+                    hide.push('sartrouville');
+                    hide.push('taverny');
+                } else if (location.hash.toLowerCase().indexOf('taverny') >= 0) {
+                    hide.push('sartrouville');
+                    hide.push('orgeval');
+                }
+
+                for (var i = 0; i < hide.length; i++) {
+                    var element = document.getElementById('location-' + hide[i]);
+                    if (element !== null) {
+                        element.style.display = 'none';
+                    }
+                }
+                console.log('location.hash', location.hash);
+            }
+        };
+    </script>
+</head>
+<body>
+    <a id="profilePicture" href="https://burgerbreton.com">
+        <img src="https://burgerbreton.net/cdn/image/logo/unsigned/circle/300w/blue/burger-breton.png" alt="Burger Breton Logo">
+    </a>
+
+    <div id="app" style="display:none;">
+        Burger Breton
+    </div>
+
+    <div id="description">
+        <p>Merci</p>
+        <p>Soutenez Burger Breton en laissant un avis sur Google !</p>
+        <p>⭐⭐⭐⭐⭐</p>
+    </div>
+
+    <div class="links">
+        <a id="location-sartrouville" class="link" href="https://g.page/r/CeM_QHYF0vjcEAI/review" target="_blank"><i>&nbsp;</i>Page de Sartrouville</a>
+        <a id="location-orgeval" class="link" href="https://g.page/r/CZCmT98o7bh2EAI/review" target="_blank"><i>&nbsp;</i>Page d'Orgeval</a>
+        <a id="location-taverny" class="link" href="https://g.page/r/CYBvmvSVZE-mEAI/review" target="_blank"><i>&nbsp;</i>Page de Taverny</a>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="links">
+        <a class="link" href="https://burgerbreton.com/pages/contact"><i class="fas fa-envelope">&nbsp;</i>Contactez-nous</a>
+    </div>
+
+    <div id="hashtag">
+        #BurgerBreton
+    </div>
+</body>
+</html>
