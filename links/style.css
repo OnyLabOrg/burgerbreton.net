@@ -80,6 +80,22 @@ body {
     text-decoration: none;
 }
 
+#description {
+    color: var(--accentColor);
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.25;
+    display: block;
+    font-family: var(--font);
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+#description a {
+    color: var(--accentColor);
+}
+
 #links {
     font-size: 150%;
     max-width: 675px;
