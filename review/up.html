@@ -16,19 +16,28 @@
                 var hide = [];
                 if (location.hash.toLowerCase().indexOf('sartrouville') >= 0) {
                     hide.push('orgeval');
+                    hide.push('poissy');
                     hide.push('taverny');
                     hide.push('carrieres-sur-seine');
                 } else if (location.hash.toLowerCase().indexOf('carrieres') >= 0) {
                     hide.push('sartrouville');
                     hide.push('taverny');
                     hide.push('orgeval');
+                    hide.push('poissy');
                 } else if (location.hash.toLowerCase().indexOf('orgeval') >= 0) {
                     hide.push('sartrouville');
                     hide.push('taverny');
+                    hide.push('poissy');
                     hide.push('carrieres-sur-seine');
+                } else if (location.hash.toLowerCase().indexOf('poissy') >= 0) {
+                    hide.push('sartrouville');
+                    hide.push('orgeval');
+                    hide.push('carrieres-sur-seine');
+                    hide.push('taverny');
                 } else if (location.hash.toLowerCase().indexOf('taverny') >= 0) {
                     hide.push('sartrouville');
                     hide.push('orgeval');
+                    hide.push('poissy');
                     hide.push('carrieres-sur-seine');
                 }
 
@@ -61,6 +70,7 @@
     <div class="links">
         <a id="location-carrieres-sur-seine" class="link" href="https://g.page/r/CWXJIebdI_7BEAE/review" target="_blank"><i>&nbsp;</i>Page Google de Carrières-sur-Seine</a>
         <a id="location-orgeval" class="link" href="https://g.page/r/CZCmT98o7bh2EAI/review" target="_blank"><i>&nbsp;</i>Page Google d'Orgeval</a>
+        <a id="location-poissy" class="link" href="https://g.page/r/CRKhpK7X4bwZEAE/review" target="_blank"><i>&nbsp;</i>Page Google de Poissy</a>
         <a id="location-sartrouville" class="link" href="https://g.page/r/CeM_QHYF0vjcEAI/review" target="_blank"><i>&nbsp;</i>Page Google de Sartrouville</a>
         <a id="location-taverny" class="link" href="https://g.page/r/CYBvmvSVZE-mEAI/review" target="_blank"><i>&nbsp;</i>Page Google de Taverny</a>
     </div>
