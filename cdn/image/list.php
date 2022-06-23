@@ -25,7 +25,7 @@ foreach ($directories as $directory) {
 $content = '';
 foreach ($directories as $directory) {
     if (count($directory->files) > 0) {
-        $content .= '<h1>' . basename($directory->path) . '</h1>';
+        $content .= '<h1 id="' . basename($directory->path) . '">' . basename($directory->path) . '</h1>';
         $content .= '<ul>';
         foreach($directory->files as $file) {
             $filePath = str_replace('\\', '/', $file);
