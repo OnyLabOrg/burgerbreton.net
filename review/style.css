@@ -80,7 +80,7 @@ body {
     text-decoration: none;
 }
 
-#description {
+.description {
     color: var(--accentColor);
     font-size: 1.5rem;
     font-weight: normal;
