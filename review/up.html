@@ -42,9 +42,13 @@
                 }
 
                 for (var i = 0; i < hide.length; i++) {
-                    var element = document.getElementById('gmb-location-' + hide[i]);
-                    if (element !== null) {
-                        element.style.display = 'none';
+                    var gmb = document.getElementById('gmb-location-' + hide[i]);
+                    if (gmb !== null) {
+                        gmb.style.display = 'none';
+                    }
+                    var ta = document.getElementById('ta-location-' + hide[i]);
+                    if (ta !== null) {
+                        ta.style.display = 'none';
                     }
                 }
             }
@@ -68,11 +72,18 @@
 
     <div class="links">
         <a id="fb" class="link" href="https://www.facebook.com/burgerbreton/reviews" target="_blank"><i>&nbsp;</i>Page Facebook</a>
+		
         <a id="gmb-location-carrieres-sur-seine" class="link" href="https://g.page/r/CWXJIebdI_7BEAE/review" target="_blank"><i>&nbsp;</i>Page Google de Carrières-sur-Seine</a>
         <a id="gmb-location-orgeval" class="link" href="https://g.page/r/CZCmT98o7bh2EAI/review" target="_blank"><i>&nbsp;</i>Page Google d'Orgeval</a>
         <a id="gmb-location-poissy" class="link" href="https://g.page/r/CRKhpK7X4bwZEAE/review" target="_blank"><i>&nbsp;</i>Page Google de Poissy</a>
         <a id="gmb-location-sartrouville" class="link" href="https://g.page/r/CeM_QHYF0vjcEAI/review" target="_blank"><i>&nbsp;</i>Page Google de Sartrouville</a>
         <a id="gmb-location-taverny" class="link" href="https://g.page/r/CYBvmvSVZE-mEAI/review" target="_blank"><i>&nbsp;</i>Page Google de Taverny</a>
+		
+        <a id="ta-location-carrieres-sur-seine" class="link" href="https://www.tripadvisor.fr/UserReview-g1655699-d24050876.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Carrières-sur-Seine</a>
+        <a id="ta-location-orgeval" class="link" href="https://www.tripadvisor.fr/UserReview-g488285-d24047979.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor d'Orgeval</a>
+        <a id="ta-location-poissy" class="link" href="https://www.tripadvisor.fr/UserReview-g562719-d24050880.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Poissy</a>
+        <a id="ta-location-sartrouville" class="link" href="https://www.tripadvisor.fr/UserReview-g3373633-d24046156.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Sartrouville</a>
+        <a id="ta-location-taverny" class="link" href="https://www.tripadvisor.fr/UserReview-g1080267-d24050878.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Taverny</a>
     </div>
     <br />
     <br />
