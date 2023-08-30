@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Breton</title>
+	<meta name="description" content="Livraison de burgers & crêpes artisanaux">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="icon" href="https://burgerbreton.net/cdn/image/favicon/32x32/square/white/burger-breton.png" type="image/x-icon" />
+
+    <script>
+        window.onload = function () {
+            if (typeof location.hash === 'string') {
+                var hide = [];
+                if (location.hash.toLowerCase().indexOf('sartrouville') >= 0) {
+                    hide.push('orgeval');
+                    hide.push('poissy');
+                    hide.push('taverny');
+                    hide.push('carrieres-sur-seine');
+                } else if (location.hash.toLowerCase().indexOf('carrieres') >= 0) {
+                    hide.push('sartrouville');
+                    hide.push('taverny');
+                    hide.push('orgeval');
+                    hide.push('poissy');
+                } else if (location.hash.toLowerCase().indexOf('orgeval') >= 0) {
+                    hide.push('sartrouville');
+                    hide.push('taverny');
+                    hide.push('poissy');
+                    hide.push('carrieres-sur-seine');
+                } else if (location.hash.toLowerCase().indexOf('poissy') >= 0) {
+                    hide.push('sartrouville');
+                    hide.push('orgeval');
+                    hide.push('carrieres-sur-seine');
+                    hide.push('taverny');
+                } else if (location.hash.toLowerCase().indexOf('taverny') >= 0) {
+                    hide.push('sartrouville');
+                    hide.push('orgeval');
+                    hide.push('poissy');
+                    hide.push('carrieres-sur-seine');
+                }
+
+                for (var i = 0; i < hide.length; i++) {
+                    var gmb = document.getElementById('gmb-location-' + hide[i]);
+                    if (gmb !== null) {
+                        gmb.style.display = 'none';
+                    }
+                    var ta = document.getElementById('ta-location-' + hide[i]);
+                    if (ta !== null) {
+                        ta.style.display = 'none';
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <a id="profilePicture" href="https://burgerbreton.com">
+        <img src="https://burgerbreton.net/cdn/image/logo/unsigned/circle/300w/blue/burger-breton.png" alt="Burger Breton Logo">
+    </a>
+
+    <div id="app" style="display:none;">
+        Burger Breton
+    </div>
+
+    <div class="description">
+        <p>Merci</p>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>Soutenez Burger Breton en laissant un avis sur Facebook, Google et TripAdvisor !</p>
+    </div>
+
+    <div class="links">
+        <a id="fb" class="link" href="https://www.facebook.com/burgerbreton/reviews" target="_blank"><i>&nbsp;</i>Page Facebook</a>
+		
+        <a id="gmb-location-carrieres-sur-seine" class="link" href="https://g.page/r/CWXJIebdI_7BEAE/review" target="_blank"><i>&nbsp;</i>Page Google de Carrières-sur-Seine</a>
+        <a id="gmb-location-orgeval" class="link" href="https://g.page/r/CZCmT98o7bh2EAI/review" target="_blank"><i>&nbsp;</i>Page Google d'Orgeval</a>
+        <a id="gmb-location-poissy" class="link" href="https://g.page/r/CRKhpK7X4bwZEAE/review" target="_blank"><i>&nbsp;</i>Page Google de Poissy</a>
+        <a id="gmb-location-sartrouville" class="link" href="https://g.page/r/CeM_QHYF0vjcEAI/review" target="_blank"><i>&nbsp;</i>Page Google de Sartrouville</a>
+        <a id="gmb-location-taverny" class="link" href="https://g.page/r/CYBvmvSVZE-mEAI/review" target="_blank"><i>&nbsp;</i>Page Google de Taverny</a>
+		
+        <a id="ta-location-carrieres-sur-seine" class="link" href="https://www.tripadvisor.fr/UserReview-g1655699-d24050876.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Carrières-sur-Seine</a>
+        <a id="ta-location-orgeval" class="link" href="https://www.tripadvisor.fr/UserReview-g488285-d24047979.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor d'Orgeval</a>
+        <a id="ta-location-poissy" class="link" href="https://www.tripadvisor.fr/UserReview-g562719-d24050880.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Poissy</a>
+        <a id="ta-location-sartrouville" class="link" href="https://www.tripadvisor.fr/UserReview-g3373633-d24046156.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Sartrouville</a>
+        <a id="ta-location-taverny" class="link" href="https://www.tripadvisor.fr/UserReview-g1080267-d24050878.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Taverny</a>
+    </div>
+    <br />
+	<div>
+		<p style="text-align:center;font-style:italic">(vous devez &ecirc;tre connect&eacute; pour laisser un avis)</p>
+	</div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="links">
+        <a class="link" href="https://burgerbreton.com/pages/contact"><i class="fas fa-envelope">&nbsp;</i>Contactez-nous</a>
+    </div>
+
+    <div id="hashtag">
+        #BurgerBreton
+    </div>
+</body>
+</html>
