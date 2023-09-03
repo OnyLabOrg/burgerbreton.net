@@ -11,47 +11,62 @@
     <link rel="icon" href="https://burgerbreton.net/cdn/image/favicon/32x32/square/white/burger-breton.png" type="image/x-icon" />
 
     <script>
+		function showElement(id) {
+			var element = document.getElementById(id);
+			if (element !== null) {
+				element.style.display = 'block';
+			}
+		}
+		
+		function hideElement(id) {
+			var element = document.getElementById(id);
+			if (element !== null) {
+				element.style.display = 'none';
+			}
+		}
+	
         window.onload = function () {
-            if (typeof location.hash === 'string') {
-                var hide = [];
-                if (location.hash.toLowerCase().indexOf('sartrouville') >= 0) {
-                    hide.push('orgeval');
-                    hide.push('poissy');
-                    hide.push('taverny');
-                    hide.push('carrieres-sur-seine');
-                } else if (location.hash.toLowerCase().indexOf('carrieres') >= 0) {
-                    hide.push('sartrouville');
-                    hide.push('taverny');
-                    hide.push('orgeval');
-                    hide.push('poissy');
-                } else if (location.hash.toLowerCase().indexOf('orgeval') >= 0) {
-                    hide.push('sartrouville');
-                    hide.push('taverny');
-                    hide.push('poissy');
-                    hide.push('carrieres-sur-seine');
-                } else if (location.hash.toLowerCase().indexOf('poissy') >= 0) {
-                    hide.push('sartrouville');
-                    hide.push('orgeval');
-                    hide.push('carrieres-sur-seine');
-                    hide.push('taverny');
-                } else if (location.hash.toLowerCase().indexOf('taverny') >= 0) {
-                    hide.push('sartrouville');
-                    hide.push('orgeval');
-                    hide.push('poissy');
-                    hide.push('carrieres-sur-seine');
-                }
-
-                for (var i = 0; i < hide.length; i++) {
-                    var gmb = document.getElementById('gmb-location-' + hide[i]);
-                    if (gmb !== null) {
-                        gmb.style.display = 'none';
-                    }
-                    var ta = document.getElementById('ta-location-' + hide[i]);
-                    if (ta !== null) {
-                        ta.style.display = 'none';
-                    }
-                }
-            }
+			var anchor = '#';
+            if (typeof location.hash === 'string' && location.hash.length > 0) {
+                if (location.hash.toLowerCase().indexOf('ubereats') >= 0) {
+					showElement('link-ubereats');
+					showElement('link-instruction');
+					anchor = location.hash;
+				} else if (location.hash.toLowerCase().indexOf('deliveroo') >= 0) {
+					showElement('link-deliveroo');
+					showElement('link-instruction');
+					anchor = location.hash;
+				} else if (location.hash.toLowerCase().indexOf('justeat') >= 0) {
+					showElement('link-justeat');
+					showElement('link-instruction');
+					anchor = location.hash;
+				}
+			}
+			
+            var reviewBad = document.getElementById('review-bad');
+			if (reviewBad !== null) {
+				reviewBad.addEventListener('click', function () {
+					hideElement('form');
+					showElement('result-bad');
+				});
+				reviewBad.setAttribute('href', anchor);
+			}
+            var reviewAverage = document.getElementById('review-average');
+			if (reviewAverage !== null) {
+				reviewAverage.addEventListener('click', function () {
+					hideElement('form');
+					showElement('result-average');
+				});
+				reviewAverage.setAttribute('href', anchor);
+			}
+            var reviewGood = document.getElementById('review-good');
+			if (reviewGood !== null) {
+				reviewGood.addEventListener('click', function () {
+					hideElement('form');
+					showElement('result-good');
+				});
+				reviewGood.setAttribute('href', anchor);
+			}
         };
     </script>
 </head>
@@ -60,35 +75,51 @@
         <img src="https://burgerbreton.net/cdn/image/logo/unsigned/circle/300w/blue/burger-breton.png" alt="Burger Breton Logo">
     </a>
 
-    <div id="app" style="display:none;">
+    <div id="app" style="display:none">
         Burger Breton
     </div>
 
     <div class="description">
-        <p>Merci</p>
-        <p>⭐⭐⭐⭐⭐</p>
-        <p>Soutenez Burger Breton en laissant un avis sur Facebook, Google et TripAdvisor !</p>
-    </div>
-
-    <div class="links">
-        <a id="fb" class="link" href="https://www.facebook.com/burgerbreton/reviews" target="_blank"><i>&nbsp;</i>Page Facebook</a>
-		
-        <a id="gmb-location-carrieres-sur-seine" class="link" href="https://g.page/r/CWXJIebdI_7BEAE/review" target="_blank"><i>&nbsp;</i>Page Google de Carrières-sur-Seine</a>
-        <a id="gmb-location-orgeval" class="link" href="https://g.page/r/CZCmT98o7bh2EAI/review" target="_blank"><i>&nbsp;</i>Page Google d'Orgeval</a>
-        <a id="gmb-location-poissy" class="link" href="https://g.page/r/CRKhpK7X4bwZEAE/review" target="_blank"><i>&nbsp;</i>Page Google de Poissy</a>
-        <a id="gmb-location-sartrouville" class="link" href="https://g.page/r/CeM_QHYF0vjcEAI/review" target="_blank"><i>&nbsp;</i>Page Google de Sartrouville</a>
-        <a id="gmb-location-taverny" class="link" href="https://g.page/r/CYBvmvSVZE-mEAI/review" target="_blank"><i>&nbsp;</i>Page Google de Taverny</a>
-		
-        <a id="ta-location-carrieres-sur-seine" class="link" href="https://www.tripadvisor.fr/UserReview-g1655699-d24050876.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Carrières-sur-Seine</a>
-        <a id="ta-location-orgeval" class="link" href="https://www.tripadvisor.fr/UserReview-g488285-d24047979.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor d'Orgeval</a>
-        <a id="ta-location-poissy" class="link" href="https://www.tripadvisor.fr/UserReview-g562719-d24050880.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Poissy</a>
-        <a id="ta-location-sartrouville" class="link" href="https://www.tripadvisor.fr/UserReview-g3373633-d24046156.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Sartrouville</a>
-        <a id="ta-location-taverny" class="link" href="https://www.tripadvisor.fr/UserReview-g1080267-d24050878.html" target="_blank"><i>&nbsp;</i>Page TripAdvisor de Taverny</a>
+		<div id="form">
+			<p>Comment était votre commande ?</p>
+			<p>
+				<span><a id="review-bad" href="#"><img src="https://burgerbreton.net/cdn/image/website/icon/bad.png" width="80px" /></a></span>
+				<span><a id="review-average" href="#"><img src="https://burgerbreton.net/cdn/image/website/icon/average.png" width="80px" /></a></span>
+				<span><a id="review-good" href="#"><img src="https://burgerbreton.net/cdn/image/website/icon/good.png" width="80px" /></a></span>
+			</p>
+		</div>
+		<div id="result-bad" style="display:none;">
+			<p>Nous aurions aimé être à la hauteur de vos attentes</p>
+			<p>Comment pouvons-nous vous aider et nous améliorer ?</p>
+			<p><i>Un probl&egrave;me avec votre commande ? Envoyez-nous un e-mail &agrave; <a href="mailto:reclamation@burgerbreton.com">reclamation@burgerbreton.com</a>
+			ou appelez-nous au <a href="tel:+33183439836">01 83 43 98 36</a>.</i></p>
+		</div>
+		<div id="result-average" style="display:none;">
+			<p>Nous aurions aimé faire mieux</p>
+			<p>Comment pouvons-nous être à la hauteur de 100% de vos attentes ?</p>
+			<p><i>Dites-nous en plus par e-mail &agrave; <a href="mailto:bonjour@burgerbreton.com">bonjour@burgerbreton.com</a>.</i></p>
+		</div>
+		<div id="result-good" style="display:none;">
+			<p>Merci</p>
+			<p>⭐⭐⭐⭐⭐</p>
+			<div class="links">		
+				<a id="link-ubereats" class="link" href="https://www.ubereats.com/fr/orders" target="_blank" style="display:none">
+					<i>&nbsp;</i>Donner mon avis sur Uber Eats
+				</a>
+				<a id="link-deliveroo" class="link" href="https://deliveroo.fr/fr/orders" target="_blank" style="display:none">
+					<i>&nbsp;</i>Donner mon avis sur Deliveroo
+				</a>
+				<a id="link-justeat" class="link" href="https://www.just-eat.fr/#historique-de-commandes" target="_blank" style="display:none">
+					<i>&nbsp;</i>Donner mon avis sur Just Eat
+				</a>
+			
+				<p id="link-instruction" style="text-align:center;font-style:italic;font-size:60%;display:none">
+				(vous devez &ecirc;tre connect&eacute; pour laisser un avis)
+				</p>
+			</div>
+		</div>
     </div>
     <br />
-	<div>
-		<p style="text-align:center;font-style:italic">(vous devez &ecirc;tre connect&eacute; pour laisser un avis)</p>
-	</div>
     <br />
     <br />
     <br />
